@@ -7,8 +7,13 @@ body{
     padding: 0;
     background-image: url("../imgs/background.jpg");
     background-clip: border;
-    background-repeat: no-repeat;
+    background-position-y: 22%;
+    background-repeat:no-repeat;
     background-size: 100%;
+}
+
+main{
+    position:relative;
 }
 
 header{
@@ -31,7 +36,7 @@ h1{
     display: inline-block;
     position:absolute;
     top:25%;
-    left:5px;
+    left:2%;
 }
 
 h2{
@@ -90,7 +95,7 @@ header .wrapper{
 
 .section{
     position: absolute;
-    top: 20%;
+    top: 3%;
     right: 5px;
     width: 60px;
     height: 60px;
@@ -119,7 +124,7 @@ main .button{
     margin: 10px;
     border: solid #ffff;
     background-color: rgba(0,0,0,0.5);
-    width: 200px;
+    width: 15.75%;
     display: block;
     color: #ffff;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.75);
@@ -139,35 +144,35 @@ main .button:hover{
 .sobre.button:hover ~ .sobre.section{
     border-radius: 30px;
     width: 80%;
-    height: 50%;
+    height: 90%;
     color: #ffff;
 }
 
 .experiencia.button:hover ~ .experiencia.section{
     border-radius: 30px;
     width: 80%;
-    height: 50%;
+    height: 90%;
     color: #ffff;
 }
 
 .academica.button:hover ~ .academica.section{
     border-radius: 30px;
     width: 80%;
-    height: 50%;
+    height: 90%;
     color: #ffff;
 }
 
 .habilidades.button:hover ~ .habilidades.section{
     border-radius: 30px;
     width: 80%;
-    height: 50%;
+    height: 90%;
     color: #ffff;
 }
 
 .linguas.button:hover ~ .linguas.section{
     border-radius: 30px;
     width: 80%;
-    height: 50%;
+    height: 90%;
     color: #ffff;
 }
 
