@@ -1,0 +1,173 @@
+html{
+    overflow:hidden;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../imgs/background.jpg");
+    background-clip: border;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+header{
+    background-color: rgb(0,0,0);
+    padding: 2% 0;
+    height:10vh;
+    position:relative;
+}
+
+nav a{
+    color:black;
+}
+
+h1,h2,h3,p,ul,span{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    color: white;
+    display: inline-block;
+    position:absolute;
+    top:25%;
+    left:5px;
+}
+
+h2{
+    padding: 0;
+    margin:0;
+}
+
+.left{
+    float:left;
+    width: 45%;
+    margin: 1.5%;
+}
+
+.right{
+    float:right;
+    width: 45%;
+    margin: 1.5%;
+}
+
+.center{
+    display: block;
+    clear: both;
+    margin: 15px;
+}
+
+.button{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    border-radius: 60px;
+    background-color: rgb(255, 255, 255);
+    transition: width 0.3s ease-out;
+}
+
+header .button:hover{
+    width:200px;
+    background-color: #00acca;
+}
+
+header .button:hover a{
+    color:#ffff
+}
+
+
+header .button .icon{
+    line-height: 60px;
+    text-align: center;
+}
+
+header .wrapper{
+    position: absolute;
+    top:25%;
+    right:5px;
+    text-align: center;
+}
+
+.section{
+    position: absolute;
+    top: 20%;
+    right: 5px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    background: rgba(0,0,0,0.75);
+    border: solid rgba(255, 255, 255, 0.75);
+    box-shadow: 0 10px 10px rgba(0,0,0,.1);
+    display: block;
+    overflow: hidden;
+    color:rgba(0,0,0,0);
+    transition: height 0.5s, width 0.5s;
+}
+
+.section.dummy{
+    background-color: #000000;
+}
+
+main .wrapper{
+    position:absolute;
+    background-color: rgba(0,0,0,0.25);
+    left:5px;
+}
+
+
+main .button{
+    margin: 10px;
+    border: solid #ffff;
+    background-color: rgba(0,0,0,0.5);
+    width: 200px;
+    display: block;
+    color: #ffff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.75);
+}
+
+main .text{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 60px;
+    text-align: center;
+}
+
+main .button:hover{
+    background-color: #ffff;
+    color: #000000;
+}
+
+.sobre.button:hover ~ .sobre.section{
+    border-radius: 30px;
+    width: 80%;
+    height: 50%;
+    color: #ffff;
+}
+
+.experiencia.button:hover ~ .experiencia.section{
+    border-radius: 30px;
+    width: 80%;
+    height: 50%;
+    color: #ffff;
+}
+
+.academica.button:hover ~ .academica.section{
+    border-radius: 30px;
+    width: 80%;
+    height: 50%;
+    color: #ffff;
+}
+
+.habilidades.button:hover ~ .habilidades.section{
+    border-radius: 30px;
+    width: 80%;
+    height: 50%;
+    color: #ffff;
+}
+
+.linguas.button:hover ~ .linguas.section{
+    border-radius: 30px;
+    width: 80%;
+    height: 50%;
+    color: #ffff;
+}
+
