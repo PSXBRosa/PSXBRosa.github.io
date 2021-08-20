@@ -7,6 +7,10 @@ img.slide {
     bottom: auto;
 }
 
-.alt-color{
+:is(h1, h2, h3, h4, h5, h6, a).alt-color{
+    color: rgb(97, 131, 182);
+}
+
+body.alt-color{
     background-color: rgb(97, 131, 182);
 }
