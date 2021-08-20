@@ -1,0 +1,12 @@
+img.slide {
+    filter: brightness(25%);
+  }
+
+.carousel-caption {
+    top: 0;
+    bottom: auto;
+}
+
+.alt-color{
+    background-color: rgb(97, 131, 182);
+}
