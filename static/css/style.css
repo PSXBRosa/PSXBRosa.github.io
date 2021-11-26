@@ -14,7 +14,7 @@ body{
 .icon {
     filter: invert(65%);
     margin-left: 20px;
-    width: 60px;
+    width: 40px;
     transition-duration: 0.5s;
 }
 
@@ -24,7 +24,7 @@ body{
 }
 
 .profile {
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .search-bar {
@@ -33,13 +33,6 @@ body{
 
 
 @media screen and (max-width: 600px) {
-.icon {
-    width: 40px;
-}
-
-.profile {
-    font-size: 30px;
-}
 
 .search-bar {
     width: 100%;
