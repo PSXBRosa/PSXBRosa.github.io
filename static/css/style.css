@@ -10,3 +10,65 @@ body{
     height: 100%;
     background-image: linear-gradient(to right bottom, #045962, #00d2e9);
 }
+
+.icon {
+    filter: invert(65%);
+    margin-left: 20px;
+    width: 60px;
+    transition-duration: 0.5s;
+}
+
+.icon:hover {
+    filter: invert(80%);
+    transition-duration: 0.5s;
+}
+
+.profile {
+    font-size: 50px;
+}
+
+.search-bar {
+    width: 50%;
+}
+
+
+@media screen and (max-width: 600px) {
+.icon {
+    width: 40px;
+}
+
+.profile {
+    font-size: 30px;
+}
+
+.search-bar {
+    width: 100%;
+}
+}
+
+
+
+.custom-shadow{
+    box-shadow: 0 10px 15px black;
+}
+
+.btn-white{
+    background-color: #ffffff
+}
+
+.form-control, .btn-white {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.input-group{
+    border-radius: 10px;
+}
+
+.rounded-left{
+    border-radius: 10px 0 0 10px;
+}
+
+.rounded-right{
+    border-radius: 0 10px 10px 0;
+}
