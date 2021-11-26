@@ -14,10 +14,12 @@ class Disciplina(models.Model):
     codigo = models.CharField(max_length=20, unique = True)
     semestre = models.IntegerField(blank = True, null =  True)
     descricao = models.TextField()
+    creditos_aula = models.IntegerField()
+    creditos_trabalho = models.IntegerField()
+
 
     def __str__(self):
         return self.nome
-
 
 class Avaliacao(models.Model):
     autor = models.ForeignKey(
@@ -85,10 +87,3 @@ class Professor(models.Model):
     file_path = models.CharField(max_length = 255) # alteração em relação ao projeto 
     ano_de_ingresso = models.IntegerField()
     disciplina = models.ManyToManyField(Disciplina)
-
-
-
-    
-
-
-
