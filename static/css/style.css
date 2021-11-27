@@ -11,6 +11,10 @@ body{
     background-image: linear-gradient(to right bottom, #045962, #00d2e9);
 }
 
+nav{
+    height: 61px; /* fixo */
+}
+
 .icon {
     filter: invert(65%);
     margin-left: 20px;
