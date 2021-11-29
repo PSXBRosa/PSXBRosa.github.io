@@ -6,6 +6,13 @@ class DisciplinaListView(generic.ListView):
     model = Disciplina
     template_name = 'list.html'
 
+    def get_queryset(self):
+        queryset = Disciplina.objects.all()
+        if self.request.GET.get("query", False):
+            search_term = self.request.GET['query'].lower()
+            queryset = queryset.filter(nome__icontains=search_term)
+        return queryset        
+
 class DisciplinaDetailView(generic.DetailView):
     model = Disciplina
     template_name = 'detail.html'

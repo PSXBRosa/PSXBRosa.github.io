@@ -5,5 +5,10 @@ Lista de Disciplinasaa
 {% endblock title %}
 
 {% block content %}
-<h1>Lista de disciplinas</h1>
-{% endblock content %}
+    <h2>Disciplinas</h2>
+    <ul>
+        {% for disciplina in object_list %}
+            <li>{{ disciplina.nome }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

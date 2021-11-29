@@ -14,8 +14,8 @@ class Disciplina(models.Model):
     codigo = models.CharField(max_length=20, unique = True)
     semestre = models.IntegerField(blank = True, null =  True)
     descricao = models.TextField()
-    creditos_aula = models.IntegerField()           # mudança do projeto, atualiza depois
-    creditos_trabalho = models.IntegerField()       # mudança do projeto, atualiza depois
+    creditos_aula = models.IntegerField(default=0)           # mudança do projeto, atualiza depois
+    creditos_trabalho = models.IntegerField(default=0)       # mudança do projeto, atualiza depois
 
 
     def __str__(self):

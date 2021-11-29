@@ -21,10 +21,10 @@
       <nav class="navbar navbar-expand navbar-dark bg-dark custom-shadow d-flex justify-content-between p-0 w-100">
         <div class="d-flex flex-item align-items-center w-100">
           <a class="navbar-brand" href="#"><img src="{% static 'icon.png' %}" alt="icone" class="icon"></a>
-          <form class="form-inline my-2 my-md-0 search-bar" id="expandeable">
+          <form class="form-inline my-2 my-md-0 search-bar" action="{% url 'search' %}" id="expandeable">
             <div class="d-flex">
-              <input class="form-control border-light rounded-left d-inline-block" id="inputBox" type="text" placeholder="Search">
-              <button type="submit" id="search-button" class="btn btn-white rounded-right d-inline-block" type="button">
+              <input class="form-control border-light rounded-left d-inline-block" name="query" id="inputBox" type="text" placeholder="Search">
+              <button type="submit" id="search-button" class="btn btn-white rounded-right d-inline-block">
                 <i class="fas fa-search"></i>
               </button>
             </div>
