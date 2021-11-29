@@ -5,6 +5,7 @@ from django.views import generic
 class DisciplinaListView(generic.ListView):
     model = Disciplina
     template_name = 'list.html'
+    paginate_by = 10
 
     def get_queryset(self):
         queryset = Disciplina.objects.all()
