@@ -30,3 +30,11 @@ def index(request):
 def login(request):
     context = {}
     return render(request, 'login.html', context)
+
+def about(request):
+    context = {}
+    return render(request, 'about.html', context)
+
+def contato(request):
+    context = {}
+    return render(request, 'contato.html', context)
