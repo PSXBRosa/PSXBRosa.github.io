@@ -1,14 +1,14 @@
 {% extends 'base.html'%}
 
 {% block title %}
-Lista de Disciplinasaa
+Disciplinas
 {% endblock title %}
 
 {% block content %}
     <h2>Disciplinas</h2>
-    <ul>
-        {% for disciplina in object_list %}
-            <li>{{ disciplina.nome }}</li>
-        {% endfor %}
-    </ul>
+    {% for disciplina in lista_disciplinas %}
+    <section class="lista-de-disciplinas">
+        
+    </section>
+    {% endfor %}
 {% endblock %}
