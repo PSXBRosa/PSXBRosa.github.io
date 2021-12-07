@@ -7,6 +7,49 @@
 
 
 {% block content %}
-
-
+<div id="cartao" class="row">
+    <div class="col-lg-2 p-0">
+        <div class="mini">
+            <h2>
+                Notas
+            </h2>
+            <ul>
+                <li>Ensino: {{ disciplina.nota_1 }}</li>
+                <li>Material Didático: {{ disciplina.nota_2 }}</li>
+                <li>Avaliações: {{ disciplina.nota_3 }}</li>
+                <li>Dificuldade: {{ disciplina.nota_4 }}</li>
+            </ul>
+        </div>
+        <div class="links">
+            <div class="link">
+                <a href="#">Fazer Avaliação</a>
+            </div>
+            <div class="link">
+                <a href="#">Ver Comentários</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9 experience">
+        <div class="disciplina">
+            <h2>
+                {{ disciplina.nome }}
+            </h2>
+            <p class="align-justify">
+                {{ disciplina.descricao }}
+            </p>
+        </div>
+        <hr><hr>
+        <div id="comentarios" class="disciplina">
+            <h2>Comentários</h2>
+            {% for comentario in lista_de_comentarios %}
+            <div class="comentario">
+                {{ comentario.autor }}
+                {{ comentario.conteudo }}
+                {{ comentario.data_de_criacao }}
+                {{ comentario.curtidas }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock content %}
