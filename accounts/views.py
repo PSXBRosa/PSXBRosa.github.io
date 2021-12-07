@@ -8,9 +8,7 @@ from django.contrib.auth.models import User
 def signup(request):
     if request.method == 'POST':
         form = Signupform(request.POST)
-        print("bp 1")
         if form.is_valid():
-            print("bp 2")
 
             nome = form.cleaned_data.get("nome")
             ano_de_ingresso = form.cleaned_data.get("ano_de_ingresso")
