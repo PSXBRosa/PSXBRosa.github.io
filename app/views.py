@@ -21,7 +21,7 @@ class DisciplinaDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["comentarios"] = Comentario.objects.filter(disciplina=self.object.id).order_by('-created_on')
+        context["comentarios"] = Comentario.objects.filter(disciplina=self.object.id).order_by('-data_de_criacao')
         return context
 
 def index(request):
