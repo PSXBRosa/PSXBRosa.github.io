@@ -3,9 +3,10 @@ from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from django.views import generic
 
 class DisciplinaListView(generic.ListView):
+    paginate_by = 2
     model = Disciplina
     template_name = 'list.html'
-    paginate_by = 10
+    context_object_name = 'lista_disciplinas'
 
     def get_queryset(self):
         queryset = Disciplina.objects.all()

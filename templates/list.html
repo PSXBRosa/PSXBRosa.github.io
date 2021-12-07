@@ -5,68 +5,8 @@ Sobre nós
 {% endblock title %}
 
 {% block content %}
-    <br>
-    <br>
     <div class=lista>
-        <h2>Resultados para "query"</h2>
-        <br>
-        <div class = disciplina>
-            <div class="cima">
-                <div class="esquerda">
-                    <h2>Eletrônica Digital</h2>
-                </div>
-                <div class="direita">
-                    <h6>1.9/5</h6>
-                    <h6>PMR3303</h6>
-                    <div class="baixo">
-                        <a href="#">Detalhes...</a>
-                    </div>
-                </div>
-            </div>
-            <ul>
-                <li>Furukawa</li>
-                <li>Diolino</li>
-            </ul>
-            <p>A disciplina de eletrônica digital para a engenharia mecatrônica busca aprofundar os conhecimentos sobre...</p>
-        </div>
-        <div class = disciplina>
-            <div class="cima">
-                <div class="esquerda">
-                    <h2>Eletrônica Analógica</h2>
-                </div>
-                <div class="direita">
-                    <h6>2.1/5</h6>
-                    <h6>PMR3308</h6>
-                    <div class="baixo">
-                        <a href="#">Detalhes...</a>
-                    </div>
-                </div>
-            </div>
-            <ul>
-                <li>Arturo</li>
-                <li>Pai</li>
-            </ul>
-            <p>A disciplina de eletrônica analógica para a engenharia mecatrônica busca aprofundar os conhecimentos sobre...</p>
-        </div>
-        <div class = disciplina>
-            <div class="cima">
-                <div class="esquerda">
-                    <h2>Eletrônica de Potência I</h2>
-                </div>
-                <div class="direita">
-                    <h6>3.4/5</h6>
-                    <h6>PEA3487</h6>
-                    <div class="baixo">
-                        <a href="#">Detalhes...</a>
-                    </div>
-                </div>
-            </div>
-            <ul>
-                <li>Walter</li>
-                <li>Wilson</li>
-            </ul>
-            <p>A disciplina de eletrônica de potência I busca aprofundar os conhecimentos sobre...</p>
-        </div>
+        <h2>Resultados para "{{ request.GET.query }}"</h2>        
         {% for disciplina in lista_disciplinas %}
         <div class = disciplina>
             <div class="cima">
@@ -76,6 +16,7 @@ Sobre nós
                 <div class="direita">
                     <h6>{{ disciplina.nota }}</h6>
                     <h6>{{ disciplina.departamento }}</h6>
+                    <h6><a href="{% url 'subject' disciplina.slug %}">Leia Mais</a></h6>
                 </div>
             </div>
             <ul>
@@ -86,5 +27,23 @@ Sobre nós
             <p>{{ disciplina.descricao }}</p>
         </div>
         {% endfor %}
+    </div>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
     </div>
 {% endblock %}
