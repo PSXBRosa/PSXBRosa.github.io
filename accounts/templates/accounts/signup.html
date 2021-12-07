@@ -6,20 +6,35 @@ Login
 
 {% block content %}
 
+<style>
+    input{
+        border:none;
+        border-radius: 5px;
+    }
+
+    label{
+    display: block;
+    margin-bottom: 5px;
+    }
+
+    ul{
+        list-style: none;
+    }
+</style>
+
 <div class="container">
-    <div class="card card-container">
+    <div class="col-10 card ">
         <h2>Fazer cadastro</h2>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Criar</button>
+            <button class="btn btn-outline-light my-2" type="submit">Criar</button>
         </form>
-        <!-- <a href="#" class="forgot-password">
-            Esqueci minha senha
-        </a> -->
+
         <a href="{% url 'login' %}" class="forgot-password">
             Já sou cadastrado
         </a>
+
         <P>{{ form.errors }}</P>
         <p>{{ form.non_field_errors }}</p>
     </div>

@@ -8,7 +8,6 @@ urlpatterns = [
     path('login/', views.login, name="login"),
     path('about/', views.about, name="about"),
     path('contato/', views.contato, name="contato"),
-    path('cadastro/', views.cadastro, name="cadastro"),
     # path('profile/<slug:slug>/', ... , name="profile"),
     # path('auth/', ... , name="auth"),
     # path('form/<slug:slug>', ... , name='form'),
