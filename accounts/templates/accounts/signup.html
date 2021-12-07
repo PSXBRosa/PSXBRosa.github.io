@@ -1,16 +1,25 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
 
 {% block title %}
-Criar Usuário
+Login
 {% endblock title %}
 
 {% block content %}
-<h2>Criar Usuário</h2>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Criar</button>
-</form>
+<div class="container">
+    <div class="card card-container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Criar</button>
+        </form>
+        <!-- <a href="#" class="forgot-password">
+            Esqueci minha senha
+        </a> -->
+        <a href="{% url 'login' %}" class="forgot-password">
+            Já sou cadastrado
+        </a>
+    </div>
+</div>
 
-{% endblock content %} 
+{% endblock %}
