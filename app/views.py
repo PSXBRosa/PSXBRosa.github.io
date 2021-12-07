@@ -1,6 +1,9 @@
 from .models import *
 from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from django.views import generic
+from django.urls import reverse
+from .models import Avaliacao
+from .forms import AvaliacaoForm
 
 class DisciplinaListView(generic.ListView):
     paginate_by = 10
@@ -23,6 +26,23 @@ class DisciplinaDetailView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context["lista_de_comentarios"] = Comentario.objects.filter(disciplina=self.object.id).order_by('-data_de_criacao')
         return context
+
+
+def create_avaliacao(request,slug):
+    if request.method == 'POST':
+        avaliacao_form = AvaliacaoForm(request.POST)
+        if avaliacao_form.is_valid():
+            avaliacao = Avaliacao(**avaliacao_form.cleaned_data)
+            avaliacao.save()
+
+            return HttpResponseRedirect(
+                reverse('app:subject', args=(avaliacao.disciplina.slug, )))
+    else:
+        avaliacao_form = AvaliacaoForm()
+
+    context = {'avaliacao_form': avaliacao_form}
+    return render(request, 'app/avaliacao.html', context)
+
 
 def index(request):
     context = {}

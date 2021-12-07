@@ -10,5 +10,5 @@ urlpatterns = [
     path('contato/', views.contato, name="contato"),
     # path('profile/<slug:slug>/', ... , name="profile"),
     # path('auth/', ... , name="auth"),
-    # path('form/<slug:slug>', ... , name='form'),
+    path('avaliacao/<slug:slug>', views.create_avaliacao , name='avaliacao'),
 ]
