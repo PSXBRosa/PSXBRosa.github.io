@@ -240,12 +240,52 @@ footer {
     color: #f2f2f2;
     padding-top: 10px;
     margin: 0 auto;
+    margin-top: 15px;
 }
 
 /* LISTA */
 
 .lista {
-    background-color: #212529;
     width: 80%;
     margin: auto;
+}
+
+.disciplina {
+    background-color: #212529;
+    border-radius: 30px 0px;
+    color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.disciplina ul {
+    list-style-type: none;
+}
+
+.cima {
+    position: relative;
+}
+
+.direita {
+    position: absolute;
+    left: 90%;
+    top:10%;
+}
+
+.baixo {
+    position: absolute;
+    top: 200%;
+    background-color: #f2f2f2;
+    border-radius: 10px 10px;
+    padding: 10px 12px 10px 12px;
+}
+
+.baixo a {
+    text-decoration: none;
+    color: #212529;
+}
+
+.baixo a:hover {
+    text-decoration: none;
+    color: tomato;
 }
