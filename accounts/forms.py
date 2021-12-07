@@ -7,7 +7,7 @@ class Signupform(UserCreationForm):
     email = forms.EmailField(max_length=200)
     nome = forms.CharField(max_length=255)
     ano_de_ingresso = forms.IntegerField()
-    departamento = forms.ModelChoiceField(queryset=Departamento.objects)
+    departamento = forms.ModelChoiceField(queryset=Departamento.objects, empty_label="Selecione seu departamento")
     data_de_nascimento = forms.DateField()
 
     def __init__(self, *args, **kwargs):
