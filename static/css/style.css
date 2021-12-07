@@ -241,3 +241,11 @@ footer {
     padding-top: 10px;
     margin: 0 auto;
 }
+
+/* LISTA */
+
+.lista {
+    background-color: #212529;
+    width: 80%;
+    margin: auto;
+}

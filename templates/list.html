@@ -5,10 +5,21 @@ Sobre nós
 {% endblock title %}
 
 {% block content %}
+    <br>
     <h2>Disciplinas</h2>
-    {% for disciplina in lista_disciplinas %}
-    <section class="lista-de-disciplinas">
-        
-    </section>
-    {% endfor %}
+    <div class=lista>
+        <section class = disciplina>
+            <h2>Eletrônica Digital</h2>
+            <div class="professores">
+                <h5>Furukawa</h5>
+                <h5>Diolino</h5>
+            </div>
+            <p>A disciplina de eletrônica digital para a engenharia mecatrônica busca aprofundar os conhecimentos sobre...</p>
+        </section>
+        {% for disciplina in lista_disciplinas %}
+        <section class="disciplina">
+            
+        </section>
+        {% endfor %}
+    </div>
 {% endblock %}
