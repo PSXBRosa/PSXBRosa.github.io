@@ -38,3 +38,7 @@ def about(request):
 def contato(request):
     context = {}
     return render(request, 'contato.html', context)
+
+def cadastro(request):
+    context = {}
+    return render(request, 'cadastro.html', context)
