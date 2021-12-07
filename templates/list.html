@@ -6,7 +6,9 @@ Sobre nós
 
 {% block content %}
     <div class=lista>
-        <h2>Resultados para "{{ request.GET.query }}"</h2>        
+        <div class="query-text">
+            <h6 class="m-0">Resultados para "{{ request.GET.query }}"</h6>
+        </div>  
         {% for disciplina in lista_disciplinas %}
         <div class = disciplina>
             <div class="cima">
@@ -30,19 +32,19 @@ Sobre nós
     </div>
 
     <div class="pagination">
-        <span class="step-links">
+        <span class="step-links d-flex justify-content-between">
             {% if page_obj.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                <a style="color: #000000; text-decoration: none;" href="?page=1"><i class="fas fa-angle-double-left"></i></a>
+                <a style="color: #000000; text-decoration: none;" href="?page={{ page_obj.previous_page_number }}"><i class="fas fa-angle-left"></i></a>
             {% endif %}
     
             <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
             </span>
     
             {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                <a style="color: #000000; text-decoration: none;" href="?page={{ page_obj.next_page_number }}"><i class="fas fa-angle-right"></i></a>
+                <a style="color: #000000; text-decoration: none;" href="?page={{ page_obj.paginator.num_pages }}"><i class="fas fa-angle-double-right"></i></a>
             {% endif %}
         </span>
     </div>

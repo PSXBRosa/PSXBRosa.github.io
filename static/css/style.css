@@ -247,6 +247,25 @@ footer {
 
 /* LISTA */
 
+.step-links{
+    min-width: 100px;
+}
+
+.pagination{
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+}
+
+.query-text{
+    background-color: #f2f2f2;
+    padding: 5px;
+    margin: 30px;
+    border-radius: 5px;
+    width: fit-content;
+    box-shadow: 0 5px 5px black;
+}
+
 .lista {
     width: 80%;
     margin: auto;

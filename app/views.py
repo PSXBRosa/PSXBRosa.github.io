@@ -3,7 +3,7 @@ from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from django.views import generic
 
 class DisciplinaListView(generic.ListView):
-    paginate_by = 2
+    paginate_by = 10
     model = Disciplina
     template_name = 'list.html'
     context_object_name = 'lista_disciplinas'
