@@ -2,17 +2,32 @@
     font-family: Comfortaa, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html{
-    height: 100vh;
+body{
+    background-image: linear-gradient(to right bottom, #045962, #00d2e9);
+    position: relative;
+    padding-bottom: 15px;
 }
 
-body{
-    height: 100%;
-    background-image: linear-gradient(to right bottom, #045962, #00d2e9);
+body, html {
+    min-height: 92.3vh; /* = 100vh - footer height */
+    background-repeat: no-repeat;
 }
 
 nav{
     height: 61px; /* fixo */
+}
+
+footer {
+    position: absolute;
+    bottom: -50px;
+    height: 50px;
+    width: 100%;
+    background-color: #212529;
+    display: flex;
+    justify-content: center;
+    color: #f2f2f2;
+    padding-top: 10px;
+    margin: 0 auto;
 }
 
 .icon {
@@ -44,8 +59,6 @@ nav{
 }
 }
 
-
-
 .custom-shadow{
     box-shadow: 0 10px 15px black;
 }
@@ -72,11 +85,6 @@ nav{
 }
 
 /* LOGIN */
-
-body, html {
-    height: 100%;
-    background-repeat: no-repeat;
-}
 
 .card-container.card {
     max-width: 350px;
@@ -231,16 +239,6 @@ body, html {
 .forgot-password:active,
 .forgot-password:focus{
     color: rgb(12, 97, 33);
-}
-
-footer {
-    background-color: #212529;
-    display: flex;
-    justify-content: center;
-    color: #f2f2f2;
-    padding-top: 10px;
-    margin: 0 auto;
-    margin-top: 15px;
 }
 
 /* LISTA */
