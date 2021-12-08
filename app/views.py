@@ -29,16 +29,21 @@ class DisciplinaDetailView(generic.DetailView):
 
 
 def create_avaliacao(request,slug):
-    if request.method == 'POST':
-        avaliacao_form = AvaliacaoForm(request.POST)
-        if avaliacao_form.is_valid():
-            avaliacao = Avaliacao(**avaliacao_form.cleaned_data)
-            avaliacao.save()
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            avaliacao_form = AvaliacaoForm(request.POST)
+            if avaliacao_form.is_valid():
+                avaliacao = Avaliacao(**avaliacao_form.cleaned_data)
+                avaliacao.save()
 
-            return HttpResponseRedirect(
-                reverse('app:subject', args=(avaliacao.disciplina.slug, )))
+                return HttpResponseRedirect(
+                    reverse('app:subject', args=(avaliacao.disciplina.slug, )))
+        else:
+            avaliacao_form = AvaliacaoForm()
     else:
-        avaliacao_form = AvaliacaoForm()
+        return HttpResponseRedirect(
+            reverse('login')
+        )
 
     context = {'disciplina_slug':slug, 'avaliacao_form': avaliacao_form}
     return render(request, 'avaliacao.html', context)
@@ -47,10 +52,6 @@ def create_avaliacao(request,slug):
 def index(request):
     context = {}
     return render(request, 'index.html', context)
-
-def login(request):
-    context = {}
-    return render(request, 'login.html', context)
 
 def about(request):
     context = {}
