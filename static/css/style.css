@@ -289,11 +289,6 @@ footer {
     text-decoration: none;
 }
 
-.disciplina:hover {
-    background-color: #f2f2f2;
-    color: #212529;
-}
-
 .flutuante {
     background-color: #f2f2f2;
     position: fixed;
@@ -307,11 +302,28 @@ footer {
     color: #f2f2f2;
     padding: 20px;
     margin-bottom: 10px;
-    min-height: 200px;
 }
 
 .disciplina ul {
     list-style-type: none;
+}
+
+.disciplina-cartao {
+    background-color: #212529;
+    border-radius: 30px 0px;
+    color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 10px;
+    min-height: 200px;
+}
+
+.disciplina-cartao ul {
+    list-style-type: none;
+}
+
+.disciplina-cartao:hover {
+    background-color: #f2f2f2;
+    color: #212529;
 }
 
 .cima {
