@@ -5,30 +5,41 @@ Sobre nós
 {% endblock title %}
 
 {% block content %}
-    <div class=lista>
-        <div class="query-text">
-            <h6 class="m-0">Resultados para "{{ request.GET.query }}"</h6>
-        </div>  
-        {% for disciplina in lista_disciplinas %}
-        <div class = disciplina>
-            <div class="cima">
-                <div class="esquerda">
-                    <h2>{{ disciplina.nome }}</h2>
-                </div>
-                <div class="direita">
-                    <h6>{{ disciplina.nota }}</h6>
-                    <h6>{{ disciplina.departamento }}</h6>
-                    <h6><a href="{% url 'subject' disciplina.slug %}">Leia Mais</a></h6>
-                </div>
-            </div>
-            <ul>
-                {% for professor in disciplina.professores %}
-                <li>{{ professor.nome }}</li>
-                {% endfor %}
-            </ul>
-            <p>{{ disciplina.descricao }}</p>
+    <div class="container-lista">
+        <div class="filter col-md-2">
+            
         </div>
-        {% endfor %}
+        <div class="filter col-md-2 flutuante">
+            <h4>Filtros</h4>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+        <div class="lista col-md-9">
+            {% for disciplina in lista_disciplinas %}
+            <a href="{% url 'subject' disciplina.slug %}">
+                <div class = "disciplina">
+                    <div class="cima">
+                        <div class="esquerda">
+                            <h2>{{ disciplina.nome }}</h2>
+                        </div>
+                        <div class="direita">
+                            <h6>{{ disciplina.nota }}</h6>
+                            <h6>{{ disciplina.departamento }}</h6>
+                        </div>
+                    </div>
+                    <ul>
+                        {% for professor in disciplina.professores %}
+                        <li>{{ professor.nome }}</li>
+                        {% endfor %}
+                    </ul>
+                    <p>{{ disciplina.descricao }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
     </div>
 
     <div class="pagination">
