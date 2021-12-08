@@ -33,11 +33,13 @@ def create_avaliacao(request,slug):
         if request.method == 'POST':
             avaliacao_form = AvaliacaoForm(request.POST)
             if avaliacao_form.is_valid():
-                avaliacao = Avaliacao(**avaliacao_form.cleaned_data)
+                disciplina = Disciplina.objects.get(slug=slug)
+                avaliacao = Avaliacao(autor=request.user, disciplina=disciplina,
+                                    **avaliacao_form.cleaned_data)
                 avaliacao.save()
 
                 return HttpResponseRedirect(
-                    reverse('app:subject', args=(avaliacao.disciplina.slug, )))
+                    reverse('subject', args=(avaliacao.disciplina.slug, )))
         else:
             avaliacao_form = AvaliacaoForm()
     else:
