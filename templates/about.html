@@ -4,24 +4,117 @@
 Sobre Nós
 {% endblock title %}
 
-
 {% block content %}
-<br>
-<div class="contato">
-    <h1>Sobre Nós</h1>
-    <br>
-    <p>
-        4 virgens e 1 desejo: tirar 10
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium turpis ac ullamcorper accumsan. In eu neque quis felis finibus 
-        ultrices. Mauris a sem interdum, efficitur magna sed, suscipit diam. Integer ut lectus ut mi elementum porta. Integer bibendum ex augue,
-         ac ultricies ligula placerat quis. Vestibulum finibus felis vel odio vulputate vestibulum. Pellentesque iaculis id dolor eu consectetur.
-          Suspendisse maximus at eros at venenatis. Nunc egestas odio ac dui aliquet, eget rutrum velit blandit.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus non metus sed dapibus. Maecenas iaculis nec enim quis venenatis. Nam 
-        cursus arcu eu lacus scelerisque facilisis. Vestibulum est nisi, finibus sed dolor sit amet, vulputate tempor magna. Morbi at lacus ultrices, 
-        efficitur quam sed, mattis nibh. Pellentesque placerat pulvinar odio, nec convallis neque ullamcorper in. Morbi rutrum mi at eleifend consectetur.
-         Nullam rhoncus nulla at libero pretium venenatis. Proin ut mattis ante, id ultricies ex. Duis in purus suscipit, blandit mi imperdiet, molestie 
-        diam. Suspendisse rutrum posuere elit. Proin vel accumsan justo, quis commodo mi. Quisque pellentesque mi eget dignissim condimentum.
-    </p>
-</div>
+<style>
+    .sobre {
+        margin-top: 5%;
+        margin-left: 15%;
+        margin-right: 15%;
+        background-color: #212529;
+        padding: 3%;
+        border-radius: 30px 0px;
+    }
 
+    .proposta {
+        color: #f2f2f2;
+    }
+
+    .equipe {
+        margin-top: 5%;
+    }
+
+    .equipe h2 {
+        color: #f2f2f2;
+    }
+
+    .cartao {
+        background-color: #212529;
+        border-radius: 30px 0px;
+        padding: 3%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .cartao img {
+        width: 60%;
+        height: 60%;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+
+    .coluna {
+        width: 25%;
+    }
+
+    .info {
+        color: #f2f2f2;
+    }
+</style>
+<div class="sobre">
+    <div class="proposta">
+        <h2>Nossa Proposta</h2>
+        <p>     Olá! Seja bem vindo ao GraduatiOn. Nossa proposta é criar um ambiente para alunos contarem suas experiências com as disciplinas 
+            que cursaram e para professores interagirem com os pensamentos dos estudantes sobre seus oferecimentos. Com isso, esperamos 
+            auxiliar as próximas gerações com diversos relatos, a fim de construir um ambiente mais harmonioso e saudável.
+        </p>
+    </div>
+    <div class="equipe">
+        <h2>Nossa equipe</h2>
+        <div class="row">
+            <div class="coluna">
+                <div class="cartao">
+                    <img src="/static/azank.png" alt="Jane">
+                    <div class="info">
+                        <h3>Felipe Azank</h3>
+                        <p class="title">Habilidade: faz estágio</p>
+                        <p>Vou contar um pouco da minha vida pra vcs</p>
+                        <p>azank@usp.br</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coluna">
+                <div class="cartao">
+                <img src="/static/hammer.png" alt="Mike">
+                    <div class="info">
+                        <h2>Hassan Vilela</h2>
+                        <p class="title">Habilidade: gay</p>
+                        <p>Vou contar um pouco da minha vida pra vcs</p>
+                        <p>hassan@usp.br</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="coluna">
+                <div class="cartao">
+                <img src="/static/cronos.png" alt="John">
+                    <div class="info">
+                        <h2>Pedro Rosa</h2>
+                        <p class="title">Habilidade: hackeou o tinder</p>
+                        <p>Vou contar um pouco da minha vida pra vcs</p>
+                        <p>cronos@usp.br</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coluna">
+                <div class="cartao">
+                    <img src="/static/thales.png" alt="John">
+                    <div class="info">
+                        <h2>Thales Galanti</h2>
+                        <p class="title">Habilidade: ser o Derek</p>
+                        <p>Vou contar um pouco da minha vida pra vcs</p>
+                        <p>thales@usp.br</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
