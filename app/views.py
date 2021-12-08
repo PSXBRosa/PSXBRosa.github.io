@@ -40,8 +40,8 @@ def create_avaliacao(request,slug):
     else:
         avaliacao_form = AvaliacaoForm()
 
-    context = {'avaliacao_form': avaliacao_form}
-    return render(request, 'app/avaliacao.html', context)
+    context = {'disciplina_slug':slug, 'avaliacao_form': avaliacao_form}
+    return render(request, 'avaliacao.html', context)
 
 
 def index(request):

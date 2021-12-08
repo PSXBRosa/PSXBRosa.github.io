@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Departamento(models.Model):
     nome = models.CharField(max_length=20, unique=True)
@@ -15,7 +16,7 @@ class Disciplina(models.Model):
     semestre = models.IntegerField(blank = True, null =  True)
     descricao = models.TextField()
     creditos_aula = models.IntegerField(default=0)           # mudança do projeto, atualiza depois
-    creditos_trabalho = models.IntegerField(default=0   )       # mudança do projeto, atualiza depois
+    creditos_trabalho = models.IntegerField(default=0)       # mudança do projeto, atualiza depois
 
 
     def __str__(self):
@@ -29,10 +30,10 @@ class Avaliacao(models.Model):
 
     disciplina = models.ForeignKey(Disciplina, on_delete=models.CASCADE)
     data_de_criacao = models.DateTimeField(auto_now_add=True)
-    nota_1 = models.IntegerField()
-    nota_2 = models.IntegerField()
-    nota_3 = models.IntegerField()
-    nota_4 = models.IntegerField()
+    nota_1 = models.IntegerField(validators=[MinValueValidator(limit_value=0), MaxValueValidator(limit_value=10)])
+    nota_2 = models.IntegerField(validators=[MinValueValidator(limit_value=0), MaxValueValidator(limit_value=10)])
+    nota_3 = models.IntegerField(validators=[MinValueValidator(limit_value=0), MaxValueValidator(limit_value=10)])
+    nota_4 = models.IntegerField(validators=[MinValueValidator(limit_value=0), MaxValueValidator(limit_value=10)])
 
     class Meta:
         ordering = ['-data_de_criacao']

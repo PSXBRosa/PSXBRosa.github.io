@@ -7,7 +7,7 @@ Realizar uma avaliação
 {% block content %}
 <h2>Adicional Avaliação</h2>
 
-<form action="{% url 'avaliacao' avaliacao.disciplina.slug %}" method="post">
+<form action="{% url 'avaliacao' disciplina_slug %}" method="post">
     {% csrf_token %}
     {{ avaliacao_form.as_p }}
     <button type="submit">Criar</button>
