@@ -6,29 +6,13 @@ Login
 
 {% block content %}
 
-<style>
-    input{
-        border:none;
-        border-radius: 5px;
-    }
-
-    label{
-    display: block;
-    margin: 5px auto;
-    }
-
-    ul{
-        list-style: none;
-    }
-</style>
-
 <div class="container">
-    <div class="col-10 card ">
+    <div class="col-6 card ">
         <h2 class="text-center">Avaliação da Disciplina</h2>
         <form id="submit_eval" method="post">
             {% csrf_token %}
             <div class="row">
-                <div class="col-md-6 mx-auto d-inline-block">
+                <div class="col-md-12 mx-auto d-inline-block">
                 {% for field in avaliacao_form%}
                         <div class="fieldWrapper d-flex flex-column mb-3">
                             {{ field.errors }}

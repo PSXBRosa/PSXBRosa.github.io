@@ -17,6 +17,10 @@ nav{
     height: 61px; /* fixo */
 }
 
+ul{
+    list-style: none;
+}
+
 footer {
     position: absolute;
     bottom: -50px;
@@ -367,6 +371,19 @@ hr {
     margin-bottom: 10px;
 }
 
+
 #submit_eval {
-    text-align: right;
+    text-align: center;
+}
+
+/* FORMS DE AVALIACAO */
+
+#id_nota_1, #id_nota_2, #id_nota_3, #id_nota_4{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+label{
+    text-align: left;
 }
