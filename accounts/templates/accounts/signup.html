@@ -5,7 +5,9 @@ Login
 {% endblock title %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
+<p>Você não tem acesso a essa página!</p>
+{% else %}
 <style>
     input{
         border:none;
@@ -55,5 +57,5 @@ Login
         <p>{{ form.non_field_errors }}</p>
     </div>
 </div>
-
+{% endif %}
 {% endblock %}

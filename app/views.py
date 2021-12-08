@@ -48,6 +48,9 @@ def create_avaliacao(request,slug):
     context = {'disciplina_slug':slug, 'avaliacao_form': avaliacao_form}
     return render(request, 'avaliacao.html', context)
 
+def my_profile(request):
+    context = {}
+    return render(request, 'profile.html', context)
 
 def index(request):
     context = {}

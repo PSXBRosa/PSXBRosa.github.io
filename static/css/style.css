@@ -21,6 +21,10 @@ ul{
     list-style: none;
 }
 
+label {
+    display: block;
+}
+
 footer {
     position: absolute;
     bottom: -50px;

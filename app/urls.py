@@ -9,4 +9,5 @@ urlpatterns = [
     path('contato/', views.contato, name="contato"),
     # path('profile/<slug:slug>/', ... , name="profile"),
     path('avaliacao/<slug:slug>', views.create_avaliacao , name='avaliacao'),
+    path('myprofile/', views.my_profile, name='my_profile')
 ]
