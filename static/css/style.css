@@ -9,7 +9,7 @@ body{
 }
 
 body, html {
-    min-height: 92.3vh; /* = 100vh - footer height */
+    min-height: 93vh; /* = 100vh - footer height */
     background-repeat: no-repeat;
 }
 
@@ -27,11 +27,12 @@ label {
 
 footer {
     position: absolute;
-    bottom: -50px;
-    height: 50px;
+    bottom: -7vh;
+    height: 7vh;
     width: 100%;
     background-color: #212529;
     display: flex;
+    text-align: center;
     justify-content: center;
     color: #f2f2f2;
     padding-top: 10px;
