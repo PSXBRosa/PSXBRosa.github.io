@@ -13,12 +13,20 @@
             <h2>
                 Notas
             </h2>
-            <ul>
-                <li>Ensino: {{ disciplina.nota_1 }}</li>
-                <li>Material Didático: {{ disciplina.nota_2 }}</li>
-                <li>Avaliações: {{ disciplina.nota_3 }}</li>
-                <li>Dificuldade: {{ disciplina.nota_4 }}</li>
-            </ul>
+            <div class="d-flex flex-row justify-content-between col-12">
+                <ul class="col-6">
+                    <li>Ensino:</li>
+                    <li>Material:</li>
+                    <li>Avaliações:</li>
+                    <li>Dificuldade:</li>
+                </ul>
+                <ul class="col-6">
+                    <li class="nota">{{ avaliacoes.nota_1__avg | floatformat:1 }}</li>
+                    <li class="nota">{{ avaliacoes.nota_2__avg | floatformat:1 }}</li>
+                    <li class="nota">{{ avaliacoes.nota_3__avg | floatformat:1 }}</li>
+                    <li class="nota">{{ avaliacoes.nota_4__avg | floatformat:1 }}</li>
+                </ul>
+            </div>
         </div>
         <div class="links">
             <div class="link">

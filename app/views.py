@@ -1,4 +1,5 @@
 from .models import *
+from django.db.models import Avg
 from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from django.views import generic
 from django.urls import reverse
@@ -23,8 +24,11 @@ class DisciplinaDetailView(generic.DetailView):
     template_name = 'detail.html'
 
     def get_context_data(self, **kwargs):
+        avals = Avaliacao.objects.filter(disciplina = self.object.id).aggregate(Avg("nota_1"),Avg("nota_2"),Avg("nota_3"),Avg("nota_4"))
+
         context = super().get_context_data(**kwargs)
         context["lista_de_comentarios"] = Comentario.objects.filter(disciplina=self.object.id).order_by('-data_de_criacao')
+        context["avaliacoes"] = avals
         return context
 
 

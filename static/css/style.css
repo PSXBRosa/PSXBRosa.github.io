@@ -361,6 +361,10 @@ footer {
     color: #212529;
 }
 
+.nota{
+    text-align: right;
+}
+
 hr {
     border: none;
     color:#f2f2f2;
