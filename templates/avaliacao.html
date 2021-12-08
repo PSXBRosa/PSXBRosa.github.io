@@ -1,17 +1,50 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
 
 {% block title %}
-Realizar uma avaliação
+Login
 {% endblock title %}
 
 {% block content %}
-<h2>Adicional Avaliação</h2>
 
-<form action="{% url 'avaliacao' disciplina_slug %}" method="post">
-    {% csrf_token %}
-    {{ avaliacao_form.as_p }}
-    <button type="submit">Criar</button>
-</form>
+<style>
+    input{
+        border:none;
+        border-radius: 5px;
+    }
 
-{% endblock content %}
+    label{
+    display: block;
+    margin: 5px auto;
+    }
 
+    ul{
+        list-style: none;
+    }
+</style>
+
+<div class="container">
+    <div class="col-10 card ">
+        <h2 class="text-center">Avaliação da Disciplina</h2>
+        <form id="submit_eval" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6 mx-auto d-inline-block">
+                {% for field in avaliacao_form%}
+                        <div class="fieldWrapper d-flex flex-column mb-3">
+                            {{ field.errors }}
+                            {{ field.label_tag }} {{ field }}
+                            {% if field.help_text %}
+                            <p class="help">{{ field.help_text|safe }}</p>
+                            {% endif %}
+                        </div>
+
+                {% endfor %}
+                </div>
+            </div>
+            <button class="btn btn-outline-light my-2 mt-3" type="submit">Submeter avaliação </button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
