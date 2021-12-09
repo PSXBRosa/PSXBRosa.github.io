@@ -51,11 +51,18 @@
 }
 
 .tudao {
+    position: relative;
     display:flex;
     border: solid #f2f2f2;
     border-radius: 30px 30px;
     width: 70%;
     padding: 2%;
+}
+
+.icones {
+    display: flex;
+    column-gap: 10px;
+    justify-content: space-between;
 }
 
 .icons {
@@ -79,7 +86,9 @@
 }
 
 .icones {
-    left: 90%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 </style>
@@ -139,7 +148,8 @@
                                         <p>{{ comentario.conteudo }}</p>
                                     </div>
                                 </div>
-                                <div class="icones">
+                                <div class="icones d-flex flex-row">
+                                    {{ comentario.curtidas }}
                                     <div class="d-flex flex-row fs-12 icons">
                                         <div class="like cursor caret-up"><i class="fas fa-caret-up fa-3x"></i></div>
                                         <div class="like cursor caret-down"><i class="fas fa-caret-down fa-3x"></i></div>
