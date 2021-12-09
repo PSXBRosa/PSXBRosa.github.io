@@ -5,7 +5,7 @@ from django.views import generic
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.forms import ValidationError
-from .models import Avaliacao
+from .models import Avaliacao, Aluno
 from .forms import AvaliacaoForm
 from datetime import datetime
 
@@ -69,9 +69,18 @@ def create_avaliacao(request,slug):
     context = {'disciplina_slug':slug, 'avaliacao_form': avaliacao_form}
     return render(request, 'avaliacao.html', context)
 
-def my_profile(request):
-    context = {}
-    return render(request, 'profile.html', context)
+
+class AlunoDetailView(generic.DetailView):
+    model = Aluno
+    template_name = 'profile.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+
+        return context
+
+
 
 def index(request):
     context = {}
