@@ -47,20 +47,39 @@
 }
 
 .inf {
-    margin-left: 2%;
+    margin-left: 5%;
 }
 
 .tudao {
     display:flex;
+    border: solid #f2f2f2;
+    border-radius: 30px 30px;
+    width: 70%;
+    padding: 2%;
 }
 
 .icons {
-    margin-right: 500px;
+    display: flex;
+    column-gap: 10px;
+    justify-content: space-between;
 }
 
 .tudao img {
     width: 40px;
     height: 40px;
+}
+
+.oficial p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.comentario {
+    margin-top: 10px;
+}
+
+.icones {
+    left: 90%;
 }
 
 </style>
@@ -116,11 +135,11 @@
                                     <div class="d-flex"><img class="rounded-circle" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png">
                                         <div class="d-flex flex-column inf"><span class="name">{{ comentario.autor }}</span><span class="date">{{ comentario.data_de_criacao }}</span></div>
                                     </div>
-                                    <div class="">
-                                        <p class="comment-text">{{ comentario.conteudo }}</p>
+                                    <div class="oficial">
+                                        <p>{{ comentario.conteudo }}</p>
                                     </div>
                                 </div>
-                                <div class="">
+                                <div class="icones">
                                     <div class="d-flex flex-row fs-12 icons">
                                         <div class="like cursor caret-up"><i class="fas fa-caret-up fa-3x"></i></div>
                                         <div class="like cursor caret-down"><i class="fas fa-caret-down fa-3x"></i></div>
@@ -135,7 +154,7 @@
             {% endfor %}
             <div class="p-2">
                 <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" width="40"><textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
-                <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="button">Post comment</button><button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button">Cancel</button></div>
+                <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="button">Comentar</button></div>
             </div>
         </div>
     </div>
