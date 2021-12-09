@@ -7,6 +7,63 @@
 
 
 {% block content %}
+<style>
+
+.date {
+    font-size: 11px
+}
+
+.comment-text {
+    font-size: 12px;
+
+}
+
+.fs-12 {
+    font-size: 12px
+}
+
+.shadow-none {
+    box-shadow: none
+}
+
+.cursor {
+    cursor: pointer
+}
+
+.caret-up:hover {
+    color:rgb(15, 179, 15);
+}
+
+.comment:hover {
+    color:#00d2e9;
+}
+
+.caret-down:hover {
+    color:red;
+}
+
+.textarea {
+    resize: none
+}
+
+.inf {
+    margin-left: 2%;
+}
+
+.tudao {
+    display:flex;
+}
+
+.icons {
+    margin-right: 500px;
+}
+
+.tudao img {
+    width: 40px;
+    height: 40px;
+}
+
+</style>
 <div id="cartao" class="row">
     <div class="col-lg-2 p-0">
         <div class="mini">
@@ -51,12 +108,35 @@
             <h2>Comentários</h2>
             {% for comentario in lista_de_comentarios %}
             <div class="comentario">
-                {{ comentario.autor }}
-                {{ comentario.conteudo }}
-                {{ comentario.data_de_criacao }}
-                {{ comentario.curtidas }}
+                <div class="container">
+                    <div class="">
+                        <div class="">
+                            <div class="tudao">
+                                <div class="">
+                                    <div class="d-flex"><img class="rounded-circle" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                        <div class="d-flex flex-column inf"><span class="name">{{ comentario.autor }}</span><span class="date">{{ comentario.data_de_criacao }}</span></div>
+                                    </div>
+                                    <div class="">
+                                        <p class="comment-text">{{ comentario.conteudo }}</p>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex flex-row fs-12 icons">
+                                        <div class="like cursor caret-up"><i class="fas fa-caret-up fa-3x"></i></div>
+                                        <div class="like cursor caret-down"><i class="fas fa-caret-down fa-3x"></i></div>
+                                        <div class="like cursor comment"><i class="fas fa-comment-alt fa-2x"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             {% endfor %}
+            <div class="p-2">
+                <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" width="40"><textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
+                <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="button">Post comment</button><button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button">Cancel</button></div>
+            </div>
         </div>
     </div>
 </div>
