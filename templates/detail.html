@@ -31,7 +31,7 @@
 }
 
 .caret-up:hover {
-    color:rgb(15, 179, 15);
+    color:#00d2e9;
 }
 
 .comment:hover {
@@ -39,7 +39,7 @@
 }
 
 .caret-down:hover {
-    color:red;
+    color:#00d2e9;
 }
 
 .textarea {
@@ -74,6 +74,19 @@
 .tudao img {
     width: 40px;
     height: 40px;
+}
+
+.oficial {
+    -ms-word-break: break-all;
+    word-break: break-all;
+
+ /* Non standard for webkit */
+     word-break: break-word;
+
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
 }
 
 .oficial p {
@@ -134,6 +147,10 @@
         <hr><hr>
         <div id="comentarios" class="disciplina">
             <h2>Comentários</h2>
+            <div class="p-2">
+                <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" width="40"><textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
+                <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="button">Comentar</button></div>
+            </div>
             {% for comentario in lista_de_comentarios %}
             <div class="comentario">
                 <div class="container">
@@ -141,7 +158,7 @@
                         <div class="">
                             <div class="tudao">
                                 <div class="">
-                                    <div class="d-flex"><img class="rounded-circle" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                    <div class="d-flex"><img class="rounded-circle" src="{{ comentario.autor.file_path }}">
                                         <div class="d-flex flex-column inf"><span class="name">{{ comentario.autor }}</span><span class="date">{{ comentario.data_de_criacao }}</span></div>
                                     </div>
                                     <div class="oficial">
@@ -162,10 +179,6 @@
                 </div>
             </div>
             {% endfor %}
-            <div class="p-2">
-                <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" width="40"><textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
-                <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="button">Comentar</button></div>
-            </div>
         </div>
     </div>
 </div>
