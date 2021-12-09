@@ -1,4 +1,6 @@
 {% extends 'base.html' %} 
+{% load static %}
+
 
 
 {% block title %}
@@ -162,7 +164,7 @@
                         <div class="">
                             <div class="tudao">
                                 <div class="">
-                                    <div class="d-flex"><img class="rounded-circle" src="{{ comentario.autor.file_path }}">
+                                    <div class="d-flex"><img class="rounded-circle" src="{% static ''|add:comentario.autor.aluno.file_path %}">
                                         <div class="d-flex flex-column inf"><span class="name">{{ comentario.autor }}</span><span class="date">{{ comentario.data_de_criacao }}</span></div>
                                     </div>
                                     <div class="oficial">
