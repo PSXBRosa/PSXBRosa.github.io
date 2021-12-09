@@ -323,7 +323,7 @@ footer {
 
 .disciplina-cartao:hover {
     box-shadow: 0 10px 15px black;
-    transform: rotate(1deg);
+    transform: rotate(0.75deg);
     transition-duration: 300ms;
 }
 
@@ -438,4 +438,33 @@ hr {
 
 label{
     text-align: left;
+}
+
+.container-login {
+    color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.container-login button {
+    background-color: #f2f2f2;
+    color: #212529;
+    border-radius: 15px;
+    padding: 5px 10px;
+}
+
+.container-login button:hover {
+    box-shadow: 0 2px 4px #f2f2f2c4;
+    transition-duration: 300ms;
+}
+
+.container-login a {
+    margin-top: 5%;
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+.container-login a:hover {
+    text-decoration: underline;
 }
