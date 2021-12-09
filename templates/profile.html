@@ -6,7 +6,17 @@ Meu Perfil
 
 {% block content %}
 
-<h1> OI {{ user.username }}</h1>
-<a href="{% url 'logout' %}">LOGOUT</a>
+<h1> Detalhes do Perfil </h1>
+<ul>
+    <li>Nome de usuário: {{ aluno.nome }}</li>
+    <li>Departamento: {{ aluno.departamento }} </li>
+    <li>Data de Nascimento: {{ aluno.data_de_nascimento}}</li>
+    <li>Ano de ingrsso: {{ aluno.ano_de_ingresso }}</li>
+    <li>Lista de Disciplinas já avaliou: {{ aluno.disciplina.all|join:", " }}</li>
+
+
+</ul>
+
+<a href="{% url 'logout' %}">Fazer logout</a>
 
 {% endblock content %}
