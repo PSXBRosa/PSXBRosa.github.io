@@ -322,8 +322,9 @@ footer {
 }
 
 .disciplina-cartao:hover {
-    background-color: #f2f2f2;
-    color: #212529;
+    box-shadow: 0 10px 15px black;
+    transform: rotate(1deg);
+    transition-duration: 300ms;
 }
 
 .cima {
@@ -394,6 +395,14 @@ footer {
 .link a {
     text-decoration: none;
     color: #212529;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: #212529;
+    box-shadow: 0 10px 15px black;
+    transform: rotate(1deg);
+    transition-duration: 300ms;
 }
 
 .nota{
